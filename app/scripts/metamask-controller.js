@@ -2043,7 +2043,11 @@ export default class MetamaskController extends EventEmitter {
    * @param {boolean} active - True if price data should be getting fetched.
    */
   set isClientOpenAndUnlocked (active) {
-    this.tokenRatesController.isActive = active
+    if (active) {
+      this.tokenRatesController.start()
+    } else {
+      this.tokenRatesController.stop()
+    }
   }
 
   /**
