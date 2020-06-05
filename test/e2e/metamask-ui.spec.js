@@ -593,7 +593,7 @@ describe('MetaMask', function () {
       assert.equal(navigationText.includes('3'), true, 'transaction confirmed')
     })
 
-    it('rejects the rest of the transactions', async function () {
+    /* it('rejects the rest of the transactions', async function () {
       await driver.clickElement(By.xpath(`//a[contains(text(), 'Reject 3')]`))
       await driver.delay(regularDelayMs)
 
@@ -604,7 +604,7 @@ describe('MetaMask', function () {
         const confirmedTxes = await driver.findElements(By.css('.transaction-list__completed-transactions .transaction-list-item'))
         return confirmedTxes.length === 5
       }, 10000)
-    })
+    }) */
   })
 
   describe('Deploy contract and call contract methods', function () {
